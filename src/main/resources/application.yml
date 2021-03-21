@@ -1,19 +1,32 @@
-
-  spring.datasource.url=jdbc:postgresql://ec2-54-145-102-149.compute-1.amazonaws.com:5432/d91opg4obd8m5b
-  spring.datasource.username=jttfnkjoiktxyj
-  spring.datasource.password=466a8556fbd7da6ade2c968868b519044f56ed939e3efb10c86674da769bc9fe
-  spring.jpa.show-sql=true
-  spring.jpa.hibernate.ddl-auto=update
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: jttfnkjoiktxyj
+    password: 466a8556fbd7da6ade2c968868b519044f56ed939e3efb10c86674da769bc9fe
+    url: jdbc:postgresql://ec2-54-145-102-149.compute-1.amazonaws.com:5432/d91opg4obd8m5b
+    platform: postgres
+    initialization-mode: always
+    continue-on-error: true
+  jpa:
+    show-sql: false
+    #    generate- ddl: false
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false;
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
   #      dialect: org.hibernate.dialect.MySQL5Dialect
 
-#  jackson:
-#    default-property-inclusion: non_null
-#  redis:
-#    host: localhost
-#    port: 6379
-#  freemarker:
-#      cache: false
-
+  #  jackson:
+  #    default-property-inclusion: non_null
+  #  redis:
+  #    host: localhost
+  #    port: 6379
+  #  freemarker:
+  #      cache: false
 
 
 
@@ -27,6 +40,3 @@ server:
 
 jwtSecret: me.zhulin
 jwtExpiration: 86400
-java:
-  runtime:
-    version=11
