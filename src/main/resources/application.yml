@@ -1,0 +1,50 @@
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password:
+#    url: jdbc:mysql://localhost:3306/commerce?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#    platform: MYSQL
+#    initialization-mode: always
+#    continue-on-error: true
+     driver-class-name: org.postgresql.Driver
+     username: jttfnkjoiktxyj
+     password: 466a8556fbd7da6ade2c968868b519044f56ed939e3efb10c86674da769bc9fe
+     url: jdbc:postgresql://ec2-54-145-102-149.compute-1.amazonaws.com
+     platform: POSTGRESQL
+     initialization-mode: always
+     continue-on-error: true
+  jpa:
+    show-sql: false
+#    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false;
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  #      dialect: org.hibernate.dialect.MySQL5Dialect
+
+#  jackson:
+#    default-property-inclusion: non_null
+#  redis:
+#    host: localhost
+#    port: 6379
+#  freemarker:
+#      cache: false
+
+
+
+
+  queries:
+    users-query: select email, password, active from users where email=?
+    roles-query: select email, role from users where email=?
+server:
+  servlet:
+    contextPath: /api
+
+jwtSecret: me.zhulin
+jwtExpiration: 86400
