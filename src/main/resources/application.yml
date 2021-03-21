@@ -49,3 +49,6 @@ server:
 
 jwtSecret: me.zhulin
 jwtExpiration: 86400
+java:
+  runtime:
+    version=11
