@@ -11,7 +11,7 @@ spring:
      driver-class-name: org.postgresql.Driver
      username: jttfnkjoiktxyj
      password: 466a8556fbd7da6ade2c968868b519044f56ed939e3efb10c86674da769bc9fe
-     url: jdbc:postgresql://ec2-54-145-102-149.compute-1.amazonaws.com
+     url: jdbc:postgres://ec2-54-145-102-149.compute-1.amazonaws.com
      platform: POSTGRESQL
      initialization-mode: always
      continue-on-error: true
@@ -39,10 +39,13 @@ spring:
 
 
 
+
   queries:
     users-query: select email, password, active from users where email=?
     roles-query: select email, role from users where email=?
-server:
+java:
+  runtime:
+    version=11:server:
   servlet:
     contextPath: /api
 
