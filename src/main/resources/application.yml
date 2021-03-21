@@ -43,9 +43,7 @@ spring:
   queries:
     users-query: select email, password, active from users where email=?
     roles-query: select email, role from users where email=?
-java:
-  runtime:
-    version=11:server:
+server:
   servlet:
     contextPath: /api
 
