@@ -11,7 +11,7 @@ spring:
      driver-class-name: org.postgresql.Driver
      username: jttfnkjoiktxyj
      password: 466a8556fbd7da6ade2c968868b519044f56ed939e3efb10c86674da769bc9fe
-     url: jdbc:postgres://ec2-54-145-102-149.compute-1.amazonaws.com
+     url: jdbc:postgres://ec2-54-145-102-149.compute-1.amazonaws.com:5432/d91opg4obd8m5b
      platform: POSTGRESQL
      initialization-mode: always
      continue-on-error: true
