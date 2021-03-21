@@ -14,7 +14,9 @@
     <name>shop-api</name>
     <description>Online Shopping API Server</description>
 
-    
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <dependencies>
         <dependency>
